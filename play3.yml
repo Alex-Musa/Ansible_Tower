@@ -1,0 +1,17 @@
+---
+
+- name: "Tower Example Play"
+  hosts: Cisco_devices
+  gather_facts: false
+  connection: network_cli
+
+  tasks:
+    - name: "OSPF Config"
+      cisco.ios.ios_config:
+        lines:
+          - router-id {{ ospf_rid }}
+        parentts:
+          - router ospf 1
+        register: my_output
+
+    - debug: var=my_output
