@@ -1,7 +1,7 @@
 ---
 
 - name: "Tower Example Play"
-  hosts: cisco_devices_group
+  hosts: cisco_devices
   gather_facts: false
   connection: network_cli
 
